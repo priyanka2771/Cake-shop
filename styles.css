@@ -1,0 +1,118 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image Styling */
+.img-style {
+  height: 240px;
+  width: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+.img-style:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Apply animation */
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+/* Pause on hover */
+.group:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #9333ea;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Content */
+.content {
+  padding: 16px;
+}
+
+.content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Price */
+.price {
+  color: #9333ea;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Button */
+.btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 999px;
+  background: #9333ea;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #7e22ce;
+}
