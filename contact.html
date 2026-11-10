@@ -3,109 +3,225 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
+    <title>Contact Us | Creative Cake</title>
+    <meta
+      name="description"
+      content="Get in touch with Creative Cake for custom cakes, bulk orders and enquiries. Send a message or chat with us on WhatsApp."
+    />
+    <meta name="theme-color" content="#FFF8F0" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Creative Cake" />
+    <meta property="og:title" content="Contact Us | Creative Cake" />
+    <meta
+      property="og:description"
+      content="Questions or custom orders? Send us a message or chat on WhatsApp."
+    />
+    <meta property="og:image" content="https://www.example.com/logo1.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Fredoka:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <noscript>
+      <style>
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+
+    <!-- Same Tailwind theme as index.html — keep the two config blocks in sync -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#FFF8F0",
+              cocoa: "#3E2723",
+              berry: { DEFAULT: "#E35D6A", dark: "#C2404E" },
+              blush: "#F8C8D0",
+              butter: "#F6D186",
+              oat: "#F3E6D8",
+              sky: "#D4EBFF",
+              mint: "#D3F2E0",
+              petal: "#FCDDE3",
+              peach: "#FFE0CC",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "Georgia", "serif"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+              fun: ['"Fredoka"', "Inter", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 10px 30px -14px rgba(62,39,35,.35)",
+              lift: "0 22px 40px -18px rgba(62,39,35,.45)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css?v=17" />
   </head>
 
-  <body
-    class="min-h-screen flex items-center justify-center bg-cover bg-center"
-    style="
-      background-image: url(&quot;https://images.unsplash.com/photo-1556742059-47b93231f536?q=80&w=2070&quot;);
-    "
-  >
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/50"></div>
+  <body class="bg-cream font-sans text-cocoa antialiased">
+    <!-- Page loader: shown instantly, hidden by main.js when the page is ready -->
+    <div id="pageLoader" class="loader" role="status" aria-live="polite">
+      <svg class="loader-cake" viewBox="0 0 120 120" aria-hidden="true">
+        <ellipse cx="60" cy="106" rx="46" ry="6" fill="#F3E6D8" />
+        <rect class="loader-layer l1" x="20" y="76" width="80" height="28" rx="9" fill="#F8C8D0" />
+        <rect class="loader-layer l2" x="28" y="54" width="64" height="26" rx="9" fill="#F6D186" />
+        <rect class="loader-layer l3" x="36" y="34" width="48" height="24" rx="9" fill="#E35D6A" />
+        <path class="loader-layer l4" d="M34 38q0-9 9-9h34q9 0 9 9v3q-4 8-8 0-4 9-8 0-4 7-8 0-4 9-8 0-4 7-8 0-4 8-8 0z" fill="#FFF8F0" stroke="#3E2723" stroke-opacity=".15" />
+        <g class="loader-layer l5">
+          <circle cx="60" cy="22" r="6" fill="#C2404E" />
+          <path d="M60 16q2-6 7-8" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round" />
+        </g>
+        <path class="loader-flame" d="M92 14c3 4 3 7 0 9-3-2-3-5 0-9z" fill="#F6D186" />
+      </svg>
+      <p class="loader-text">Baking something sweet…</p>
+    </div>
 
-    <!-- Container -->
-    <div
-      class="relative z-10 grid md:grid-cols-2 max-w-5xl w-full mx-4 bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden"
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:font-semibold"
+      >Skip to content</a
     >
-      <!-- LEFT SIDE -->
-      <div
-        class="hidden md:flex flex-col justify-center p-10 text-white bg-gradient-to-br from-purple-600/80 to-blue-600/80"
-      >
-        <h1 class="text-4xl font-bold mb-4">Get in Touch</h1>
 
-        <p class="text-lg mb-6">
-          We'd love to hear from you. Send us your message and we’ll respond as
-          soon as possible.
-        </p>
+    <!-- Promo bar + navbar are injected here by main.js (shared with index.html) -->
+    <div id="site-header" class="fixed inset-x-0 top-0 z-50"></div>
 
-        <div class="space-y-3 text-sm">
-          <p>📍 Mumbai, India</p>
-          <p>📞 +91 98765 43210</p>
-          <p>✉️ bakery@email.com</p>
+    <main id="main">
+      <!-- Hero -->
+      <section class="contact-hero relative overflow-hidden px-6 pb-24 pt-40 text-center">
+        <div id="contactFloaties" class="floaties" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto max-w-3xl" data-reveal>
+          <p class="eyebrow">We'd love to hear from you</p>
+          <h1 class="font-display text-4xl font-semibold sm:text-6xl">
+            <span class="squiggle">Let's Talk Cake</span> <span aria-hidden="true">💌</span>
+          </h1>
+          <p class="mt-5 text-lg text-cocoa/80">
+            Custom cake? Bulk order? Just saying hello? Pick the quickest way to reach us, or send
+            a message and we will get back to you as soon as we can.
+          </p>
+        </div>
+        <svg class="absolute inset-x-0 bottom-[-1px] h-12 w-full text-cream" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="currentColor" d="M0 30C120 60 240 0 360 20s240 40 360 20 240-40 360-10 240 40 360 10V60H0z" />
+        </svg>
+      </section>
+
+      <div class="px-4 pb-20 sm:px-6">
+        <!-- Quick contact tiles (filled by main.js from CONFIG) -->
+        <ul id="quickContact" class="relative z-20 mx-auto -mt-12 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4"></ul>
+
+        <div class="mx-auto mt-12 grid max-w-6xl gap-8 lg:grid-cols-5">
+          <!-- Form -->
+          <section aria-labelledby="form-title" class="contact-card lg:col-span-3" data-reveal="left">
+            <h2 id="form-title" class="font-fun text-3xl font-semibold">Send us a message <span aria-hidden="true">✍️</span></h2>
+            <p class="mt-1 text-sm text-cocoa/75">Fill this in and we will reply by email or WhatsApp.</p>
+
+            <form id="contactForm" novalidate class="mt-6 space-y-5">
+              <fieldset>
+                <legend class="text-sm font-semibold">I'm writing about</legend>
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <label class="subject-chip"><input type="radio" name="subject" value="Custom cake" checked /><span>🎂 Custom cake</span></label>
+                  <label class="subject-chip"><input type="radio" name="subject" value="Bulk order" /><span>📦 Bulk order</span></label>
+                  <label class="subject-chip"><input type="radio" name="subject" value="Feedback" /><span>💬 Feedback</span></label>
+                  <label class="subject-chip"><input type="radio" name="subject" value="Something else" /><span>✨ Something else</span></label>
+                </div>
+              </fieldset>
+
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label for="cName" class="text-sm font-semibold">Name</label>
+                  <input id="cName" name="name" type="text" autocomplete="name" required aria-describedby="cName-error" class="field" />
+                  <p id="cName-error" class="mt-1 min-h-[1.25rem] text-sm text-berry-dark"></p>
+                </div>
+                <div>
+                  <label for="cEmail" class="text-sm font-semibold">Email</label>
+                  <input id="cEmail" name="email" type="email" autocomplete="email" required aria-describedby="cEmail-error" class="field" />
+                  <p id="cEmail-error" class="mt-1 min-h-[1.25rem] text-sm text-berry-dark"></p>
+                </div>
+              </div>
+
+              <div>
+                <label for="cMessage" class="text-sm font-semibold">Message</label>
+                <textarea id="cMessage" name="message" rows="5" required aria-describedby="cMessage-error" class="field"></textarea>
+                <p id="cMessage-error" class="mt-1 min-h-[1.25rem] text-sm text-berry-dark"></p>
+              </div>
+
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <button type="submit" id="sendBtn" class="btn btn-primary flex-1">Send Message</button>
+                <button type="button" id="waBtn" class="btn btn-outline flex-1">Send via WhatsApp</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Side cards -->
+          <div class="space-y-6 lg:col-span-2" data-reveal="right">
+            <section aria-labelledby="info-title" class="contact-card contact-card-pink">
+              <h2 id="info-title" class="font-fun text-2xl font-semibold"><span aria-hidden="true">📍</span> Find us</h2>
+              <ul id="contactInfo" class="mt-4 space-y-3 text-sm"></ul>
+            </section>
+
+            <section aria-labelledby="hours-title" class="contact-card contact-card-butter">
+              <h2 id="hours-title" class="font-fun text-2xl font-semibold"><span aria-hidden="true">⏰</span> Opening hours</h2>
+              <ul id="contactHours" class="mt-4 space-y-1 text-sm"></ul>
+            </section>
+
+            <section class="contact-card contact-card-sky text-center">
+              <p class="text-4xl" aria-hidden="true">🎨</p>
+              <h2 class="mt-2 font-fun text-xl font-semibold">Dreaming of a custom cake?</h2>
+              <p class="mt-1 text-sm text-cocoa/75">Design it yourself in a minute and see it live.</p>
+              <a href="index.html#custom" class="btn btn-primary btn-sm mt-4">Open the cake builder</a>
+            </section>
+          </div>
         </div>
       </div>
+    </main>
 
-      <!-- RIGHT SIDE FORM -->
-      <div class="p-8 bg-white rounded-r-3xl">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800">Contact Us</h2>
-
-        <form onsubmit="showPopup(event)" class="space-y-4">
-          <div>
-            <label class="text-sm text-gray-600">Name</label>
-            <input
-              type="text"
-              required
-              class="w-full mt-1 p-3 rounded-lg border focus:ring-2 focus:ring-purple-400 outline-none"
-            />
-          </div>
-
-          <div>
-            <label class="text-sm text-gray-600">Email</label>
-            <input
-              type="email"
-              required
-              class="w-full mt-1 p-3 rounded-lg border focus:ring-2 focus:ring-purple-400 outline-none"
-            />
-          </div>
-
-          <div>
-            <label class="text-sm text-gray-600">Message</label>
-            <textarea
-              rows="4"
-              required
-              class="w-full mt-1 p-3 rounded-lg border focus:ring-2 focus:ring-purple-400 outline-none"
-            ></textarea>
-          </div>
-
-          <button
-            class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition transform hover:scale-105"
-          >
-            Send Message 🚀
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- SUCCESS POPUP -->
+    <!-- Success dialog -->
     <div
-      id="popup"
-      class="fixed inset-0 hidden items-center justify-center bg-black/60 z-50"
+      id="successModal"
+      hidden
+      class="fixed inset-0 z-[70] flex items-center justify-center bg-cocoa/40 p-4 backdrop-blur-sm"
     >
-      <div class="bg-white p-6 rounded-xl shadow-xl text-center">
-        <h2 class="text-xl font-bold text-green-600">Message Sent!</h2>
-        <p class="text-gray-600 mt-2">We will contact you soon.</p>
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalText"
+        class="relative w-full max-w-sm rounded-3xl bg-cream p-8 text-center shadow-lift"
+      >
         <button
-          onclick="closePopup()"
-          class="mt-4 px-4 py-2 bg-purple-600 text-white rounded-lg"
+          type="button"
+          id="modalClose"
+          aria-label="Close dialog"
+          class="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full hover:bg-blush/50"
         >
-          OK
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
+        <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blush text-berry-dark" aria-hidden="true"><svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h2 id="modalTitle" class="mt-2 font-display text-2xl font-semibold">Message sent!</h2>
+        <p id="modalText" class="mt-2 text-cocoa/80">
+          Thank you. We will get back to you soon.
+        </p>
+        <button type="button" id="modalOk" class="btn btn-primary mt-6">Done</button>
       </div>
     </div>
 
-    <!-- JS -->
-    <script>
-      function showPopup(e) {
-        e.preventDefault();
-        document.getElementById("popup").classList.remove("hidden");
-      }
+    <!-- Footer, cart drawer and toast are injected by main.js -->
+    <div id="site-footer"></div>
 
-      function closePopup() {
-        document.getElementById("popup").classList.add("hidden");
-      }
-    </script>
+    <script src="main.js?v=17"></script>
   </body>
 </html>

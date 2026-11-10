@@ -1,733 +1,728 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="./src/output.css" /> -->
+    <title>Creative Cake | Handcrafted Cakes, Cupcakes &amp; Bakes</title>
+    <meta
+      name="description"
+      content="Creative Cake bakes fresh, handcrafted cakes, cupcakes, cookies, donuts and macarons for birthdays, weddings and every sweet moment. Order online or on WhatsApp."
+    />
+    <meta name="theme-color" content="#FFF8F0" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+
+    <!-- Open Graph (PLACEHOLDER: replace the og:image with the full public URL of your logo/photo) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Creative Cake" />
+    <meta property="og:title" content="Creative Cake | Handcrafted Cakes, Cupcakes &amp; Bakes" />
+    <meta
+      property="og:description"
+      content="Fresh, handcrafted cakes and bakes for every celebration. Order online or on WhatsApp."
+    />
+    <meta property="og:image" content="https://www.example.com/logo1.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts: only the two we actually use -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Fredoka:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lets CSS hide [data-reveal] elements only when JS is running -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <noscript>
+      <style>
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+
+    <!-- Tailwind (CDN) + brand theme -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Noto+Serif+Oriya:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#FFF8F0",
+              cocoa: "#3E2723",
+              berry: { DEFAULT: "#E35D6A", dark: "#C2404E" },
+              blush: "#F8C8D0",
+              butter: "#F6D186",
+              oat: "#F3E6D8",
+              sky: "#D4EBFF",
+              mint: "#D3F2E0",
+              petal: "#FCDDE3",
+              peach: "#FFE0CC",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "Georgia", "serif"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+              fun: ['"Fredoka"', "Inter", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 10px 30px -14px rgba(62,39,35,.35)",
+              lift: "0 22px 40px -18px rgba(62,39,35,.45)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css?v=17" />
+
+    <!-- Structured data (PLACEHOLDER address, phone, URLs — update before launch) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Creative Cake",
+        "description": "Handcrafted cakes, cupcakes, cookies, donuts and macarons.",
+        "url": "https://www.example.com/",
+        "image": "https://www.example.com/logo1.png",
+        "telephone": "+91 98765 43210",
+        "email": "bakery@email.com",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Sample Street",
+          "addressLocality": "Mumbai",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400001",
+          "addressCountry": "IN"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "21:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "22:00"
+          }
+        ],
+        "sameAs": ["https://instagram.com/", "https://facebook.com/"]
+      }
+    </script>
   </head>
-  <body class="scroll-smooth m-0 p-0">
-    <!-- navbar -->
-    <div class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <nav
-        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3"
-      >
-        <!-- Logo -->
-        <a href="#home" class="flex items-center space-x-2">
-          <img src="logo1.png" class="h-10 rounded-xl object-cover" />
-        </a>
 
-        <!-- Desktop Menu -->
-        <div
-          class="hidden md:flex items-center space-x-8 font-medium text-gray-700"
-        >
-          <a href="#home" class="hover:text-purple-600 transition nav-link"
-            >Home</a
-          >
-          <a href="#section2" class="hover:text-purple-600 transition nav-link"
-            >Customize</a
-          >
-          <a href="#section3" class="hover:text-purple-600 transition nav-link"
-            >Products</a
-          >
-          <a href="#section4" class="hover:text-purple-600 transition nav-link"
-            >About</a
-          >
-        </div>
-
-        <!-- Contact Button -->
-        <div class="md:flex items-center space-x-2">
-          <input
-            type="text"
-            placeholder="Search products..."
-            class="border p-2 rounded-lg w-auto"
-          />
-          <a
-            href="#section4"
-            class="hidden md:block bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition shadow"
-          >
-            Contact
-          </a>
-        </div>
-        <!-- Mobile Button -->
-        <button id="navToggle" class="md:hidden text-gray-800">☰</button>
-      </nav>
-
-      <!-- Mobile Menu -->
-      <div id="navMenu" class="hidden md:hidden px-6 pb-4 bg-white border-t">
-        <a href="#home" class="nav-link block py-2 text-gray-700">Home</a>
-        <a href="#section2" class="nav-link block py-2 text-gray-700"
-          >Customize</a
-        >
-        <a href="#section3" class="nav-link block py-2 text-gray-700"
-          >Products</a
-        >
-        <a href="#section4" class="nav-link block py-2 text-gray-700">About</a>
-
-        <a
-          href="#section4"
-          class="block mt-3 bg-purple-600 text-white text-center py-2 rounded-full"
-        >
-          Contact
-        </a>
-      </div>
+  <body class="bg-cream font-sans text-cocoa antialiased">
+    <!-- Page loader: shown instantly, hidden by main.js when the page is ready -->
+    <div id="pageLoader" class="loader" role="status" aria-live="polite">
+      <svg class="loader-cake" viewBox="0 0 120 120" aria-hidden="true">
+        <ellipse cx="60" cy="106" rx="46" ry="6" fill="#F3E6D8" />
+        <rect class="loader-layer l1" x="20" y="76" width="80" height="28" rx="9" fill="#F8C8D0" />
+        <rect class="loader-layer l2" x="28" y="54" width="64" height="26" rx="9" fill="#F6D186" />
+        <rect class="loader-layer l3" x="36" y="34" width="48" height="24" rx="9" fill="#E35D6A" />
+        <path class="loader-layer l4" d="M34 38q0-9 9-9h34q9 0 9 9v3q-4 8-8 0-4 9-8 0-4 7-8 0-4 9-8 0-4 7-8 0-4 8-8 0z" fill="#FFF8F0" stroke="#3E2723" stroke-opacity=".15" />
+        <g class="loader-layer l5">
+          <circle cx="60" cy="22" r="6" fill="#C2404E" />
+          <path d="M60 16q2-6 7-8" fill="none" stroke="#3E2723" stroke-width="1.5" stroke-linecap="round" />
+        </g>
+        <path class="loader-flame" d="M92 14c3 4 3 7 0 9-3-2-3-5 0-9z" fill="#F6D186" />
+      </svg>
+      <p class="loader-text">Baking something sweet…</p>
     </div>
-    <!-- home -->
-    <section id="home" class="relative overflow-hidden">
-      <div
-        id="slider"
-        class="flex transition-transform duration-700 ease-in-out"
-      >
-        <!-- Slide 1 -->
-        <div class="min-w-full h-screen relative">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1716484895310-9bb1828d5632?q=80&w=1816&auto=format&fit=crop"
-            class="w-full h-full object-cover"
-          />
 
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
-          ></div>
-
-          <div class="absolute inset-0 flex items-center px-6 sm:px-20">
-            <div class="text-white max-w-xl space-y-5">
-              <h1
-                class="text-4xl sm:text-6xl font-bold text-fuchsia-400 uppercase"
-              >
-                Creative Cake
-              </h1>
-              <p class="text-lg sm:text-2xl">
-                Elegant Cakes for Extraordinary Occasions
-              </p>
-
-              <div class="flex items-center gap-4 pt-6">
-                <span class="text-lg">Order Online:</span>
-                <a href="https://www.swiggy.com/"
-                  ><img
-                    src="https://cdn.worldvectorlogo.com/logos/swiggy-logo-1.svg"
-                    class="w-20"
-                /></a>
-                <a href="https://www.zomato.com/"
-                  ><img
-                    src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-logo.png"
-                    class="w-16"
-                /></a>
-              </div>
-              <div>
-                <button
-                  class="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700"
-                >
-                  Order Now
-                </button>
-                <button
-                  class="ml-4 border px-6 py-3 rounded-lg hover:bg-white hover:text-black"
-                >
-                  View Menu
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="min-w-full h-screen relative">
-          <img
-            src="https://images.unsplash.com/photo-1515208104371-33f379f845a4?q=80&w=2070&auto=format&fit=crop"
-            class="w-full h-full object-cover"
-          />
-
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
-          ></div>
-
-          <div class="absolute inset-0 flex items-center px-6 sm:px-20">
-            <div class="text-white max-w-xl space-y-5">
-              <h1
-                class="text-4xl sm:text-6xl font-bold text-pink-300 uppercase"
-              >
-                Perfect Donuts
-              </h1>
-              <p class="text-lg sm:text-2xl">Sweet, Sumptuous, Sensational.</p>
-
-              <div class="flex items-center gap-4 pt-6">
-                <span>Order Online:</span>
-                <a href="https://www.swiggy.com/">
-                  <img
-                    src="https://cdn.worldvectorlogo.com/logos/swiggy-logo-1.svg"
-                    class="w-20"
-                /></a>
-                <a href="https://www.zomato.com/"
-                  ><img
-                    src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-logo.png"
-                    class="w-16"
-                /></a>
-              </div>
-              <div>
-                <button
-                  class="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700"
-                >
-                  Order Now
-                </button>
-                <button
-                  class="ml-4 border px-6 py-3 rounded-lg hover:bg-white hover:text-black"
-                >
-                  View Menu
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="min-w-full h-screen relative">
-          <img
-            src="https://images.unsplash.com/photo-1679943366650-3cbab5ce5ff4?q=80&w=2068&auto=format&fit=crop"
-            class="w-full h-full object-cover"
-          />
-
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
-          ></div>
-
-          <div class="absolute inset-0 flex items-center px-6 sm:px-20">
-            <div class="text-white max-w-xl space-y-5">
-              <h1
-                class="text-4xl sm:text-6xl font-bold text-rose-300 uppercase"
-              >
-                Cookies
-              </h1>
-              <p class="text-lg sm:text-2xl">
-                One bite will leave you wanting more
-              </p>
-
-              <div class="flex items-center gap-4 pt-6">
-                <span>Order Online:</span>
-                <a href="https://www.swiggy.com/"
-                  ><img
-                    src="https://cdn.worldvectorlogo.com/logos/swiggy-logo-1.svg"
-                    class="w-20"
-                /></a>
-                <a href="https://www.zomato.com/"
-                  ><img
-                    src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-logo.png"
-                    class="w-16"
-                /></a>
-              </div>
-              <div>
-                <button
-                  class="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700"
-                >
-                  Order Now
-                </button>
-                <button
-                  class="ml-4 border px-6 py-3 rounded-lg hover:bg-white hover:text-black"
-                >
-                  View Menu
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="min-w-full h-screen relative">
-          <img
-            src="https://images.unsplash.com/photo-1521886655570-97530ff9454b?q=80&w=2070&auto=format&fit=crop"
-            class="w-full h-full object-cover"
-          />
-
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
-          ></div>
-
-          <div class="absolute inset-0 flex items-center px-6 sm:px-20">
-            <div class="text-white max-w-xl space-y-5">
-              <h1
-                class="text-4xl sm:text-6xl font-bold text-cyan-300 uppercase"
-              >
-                Cupcake
-              </h1>
-              <p class="text-lg sm:text-2xl">
-                Sweet and happy bite for your day
-              </p>
-
-              <div class="flex items-center gap-4 pt-6">
-                <span>Order Online:</span>
-                <a href="https://www.swiggy.com/"
-                  ><img
-                    src="https://cdn.worldvectorlogo.com/logos/swiggy-logo-1.svg"
-                    class="w-20"
-                /></a>
-                <a href="https://www.zomato.com/"
-                  ><img
-                    src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-logo.png"
-                    class="w-16"
-                /></a>
-              </div>
-              <div>
-                <button
-                  class="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700"
-                >
-                  Order Now
-                </button>
-                <button
-                  class="ml-4 border px-6 py-3 rounded-lg hover:bg-white hover:text-black"
-                >
-                  View Menu
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 5 -->
-        <div class="min-w-full h-screen relative">
-          <img
-            src="https://images.unsplash.com/photo-1681589211919-4d74ed4871c1?q=80&w=2071&auto=format&fit=crop"
-            class="w-full h-full object-cover"
-          />
-
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
-          ></div>
-
-          <div class="absolute inset-0 flex items-center px-6 sm:px-20">
-            <div class="text-white max-w-xl space-y-5">
-              <h1
-                class="text-4xl sm:text-6xl font-bold text-yellow-300 uppercase"
-              >
-                Macarons
-              </h1>
-              <p class="text-lg sm:text-2xl">Macaron magic in every bite ✨</p>
-
-              <div class="flex items-center gap-4 pt-6">
-                <span>Order Online:</span>
-                <a href="https://www.swiggy.com/"
-                  ><img
-                    src="https://cdn.worldvectorlogo.com/logos/swiggy-logo-1.svg"
-                    class="w-20"
-                /></a>
-                <a href="https://www.zomato.com/"
-                  ><img
-                    src="https://1000logos.net/wp-content/uploads/2021/06/Zomato-logo.png"
-                    class="w-16"
-                /></a>
-              </div>
-              <div>
-                <button
-                  class="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700"
-                >
-                  Order Now
-                </button>
-                <button
-                  class="ml-4 border px-6 py-3 rounded-lg hover:bg-white hover:text-black"
-                >
-                  View Menu
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Arrows -->
-      <div class="absolute left-4 top-1/2 -translate-y-1/2 z-50">
-        <button
-          onclick="prev()"
-          class="group bg-white/70 backdrop-blur-md p-4 rounded-full shadow-lg hover:bg-purple-500 transition duration-300"
-        >
-          <svg
-            class="w-6 h-6 text-gray-800 group-hover:text-white transition"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-      </div>
-      <div class="absolute right-4 top-1/2 -translate-y-1/2 z-50">
-        <button
-          onclick="next()"
-          class="group bg-white/70 backdrop-blur-md p-4 rounded-full shadow-lg hover:bg-purple-500 transition duration-300"
-        >
-          <svg
-            class="w-6 h-6 text-gray-800 group-hover:text-white transition"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Dots -->
-      <div
-        id="dots"
-        class="absolute bottom-5 w-full flex justify-center gap-2"
-      ></div>
-    </section>
-    <!-- home -->
-    <!-- rating -->
-
-    <div
-      class="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-center py-4"
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:font-semibold"
+      >Skip to content</a
     >
-      🎉 Flat 20% OFF on First Order | Use Code: SWEET20
-    </div>
-    <div class="bg-white border-t">
-      <div class="max-w-6xl mx-auto px-6">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x text-center"
+
+    <!-- Promo bar + navbar are injected here by main.js (shared with contact.html) -->
+    <div id="site-header" class="fixed inset-x-0 top-0 z-50"></div>
+
+    <main id="main">
+      <!-- ============ HERO SLIDER (slides are rendered from main.js) ============ -->
+      <section
+        id="home"
+        aria-roledescription="carousel"
+        aria-label="Featured bakes"
+        class="on-dark relative h-[100svh] min-h-[620px] overflow-hidden bg-cocoa"
+      >
+        <h1 class="sr-only">Creative Cake: handcrafted cakes, cupcakes, cookies and more</h1>
+        <div id="slider" class="flex h-full transition-transform duration-700 ease-in-out"></div>
+        <div id="heroFloaties" class="floaties" aria-hidden="true"></div>
+
+        <button
+          type="button"
+          id="prevSlide"
+          aria-label="Previous slide"
+          class="absolute left-4 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-cream/85 text-cocoa shadow-soft backdrop-blur transition hover:bg-butter sm:flex"
         >
-          <!-- Item 1 -->
-          <div class="py-8">
-            <h2 class="text-4xl font-semibold text-gray-900 tracking-tight">
-              4.8
-            </h2>
-            <p class="mt-2 text-sm text-gray-500 uppercase tracking-wide">
-              Customer Rating
+          <span data-icon="left" class="contents"></span>
+        </button>
+        <button
+          type="button"
+          id="nextSlide"
+          aria-label="Next slide"
+          class="absolute right-4 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-cream/85 text-cocoa shadow-soft backdrop-blur transition hover:bg-butter sm:flex"
+        >
+          <span data-icon="right" class="contents"></span>
+        </button>
+
+        <div class="absolute inset-x-0 bottom-16 flex items-center justify-center gap-4 sm:bottom-20">
+          <div id="dots" class="flex items-center gap-2"></div>
+          <button
+            type="button"
+            id="toggleSlider"
+            aria-label="Pause slideshow"
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-cream/85 text-cocoa transition hover:bg-butter"
+          ></button>
+        </div>
+
+        <!-- wave divider into the page -->
+        <svg
+          class="absolute inset-x-0 -bottom-px h-12 w-full text-cream sm:h-16"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M0 60C180 100 360 100 540 60S900 0 1080 40s240 50 360 20V100H0Z"
+          />
+        </svg>
+      </section>
+
+      <!-- ============ STATS ============ -->
+      <section aria-label="Our numbers" class="px-6 py-14">
+        <div class="mx-auto grid max-w-4xl grid-cols-3 gap-4 text-center" data-reveal="zoom">
+          <div>
+            <p class="font-display text-4xl font-semibold text-berry-dark sm:text-6xl">
+              <span data-count="4.8" data-decimals="1">4.8</span>
+            </p>
+            <p class="mt-1 text-xs font-medium uppercase tracking-widest text-cocoa/70 sm:text-sm">
+              Customer rating
             </p>
           </div>
-
-          <!-- Item 2 -->
-          <div class="py-8">
-            <h2 class="text-4xl font-semibold text-gray-900 tracking-tight">
-              10K+
-            </h2>
-            <p class="mt-2 text-sm text-gray-500 uppercase tracking-wide">
-              Orders Delivered
+          <div>
+            <p class="font-display text-4xl font-semibold text-berry-dark sm:text-6xl">
+              <span data-count="10">10</span>K+
+            </p>
+            <p class="mt-1 text-xs font-medium uppercase tracking-widest text-cocoa/70 sm:text-sm">
+              Orders delivered
             </p>
           </div>
-
-          <!-- Item 3 -->
-          <div class="py-8">
-            <h2 class="text-4xl font-semibold text-gray-900 tracking-tight">
-              500+
-            </h2>
-            <p class="mt-2 text-sm text-gray-500 uppercase tracking-wide">
-              Happy Clients
+          <div>
+            <p class="font-display text-4xl font-semibold text-berry-dark sm:text-6xl">
+              <span data-count="500">500</span>+
+            </p>
+            <p class="mt-1 text-xs font-medium uppercase tracking-widest text-cocoa/70 sm:text-sm">
+              Happy clients
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- rating -->
-    <!-- best seller -->
-    <section
-      id="section2"
-      class="py-16 px-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-center"
-    >
-      <!-- Heading -->
-      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
-        Best Sellers
-      </h1>
+      </section>
 
-      <!-- Subtitle -->
-      <p class="max-w-2xl mx-auto text-lg sm:text-xl text-white/90 mb-10">
-        Every celebration deserves something sweet. Our best-selling cakes are
-        made to create unforgettable memories.
-      </p>
+      <div class="sprinkles" aria-hidden="true"></div>
 
-      <!-- Buttons -->
-      <div class="flex justify-center gap-4 mb-12">
-        <button
-          class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:scale-105 transition"
-        >
-          Order Now
-        </button>
-        <button
-          class="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-purple-700 transition"
-        >
-          Inquiry
-        </button>
-      </div>
+      <!-- ============ SHOP BY OCCASION (tiles rendered from OCCASIONS in main.js) ============ -->
+      <section id="occasions" aria-labelledby="occasion-title" class="py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Celebrate every moment</p>
+            <h2 id="occasion-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Shop by Occasion</span>
+            </h2>
+            <p class="mt-4 text-lg text-cocoa/80">
+              Tell us what you are celebrating and we will show the treats that fit.
+            </p>
+          </div>
+          <div id="occasionGrid" class="mt-12 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4"></div>
+        </div>
+      </section>
 
-      <!-- Cards -->
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-        <!-- Card 1 -->
-        <div
-          class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group"
-        >
-          <div class="overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1702744998351-090b3ee4e976?q=80&w=800"
-              class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-            />
+      <!-- ============ BEST SELLERS (cards rendered from the PRODUCTS array) ============ -->
+      <section id="bestsellers" aria-labelledby="best-title" class="bg-blush/30 py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Our favourites</p>
+            <h2 id="best-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Best Sellers</span>
+            </h2>
+            <p class="mt-4 text-lg text-cocoa/80">
+              Every celebration deserves something sweet. Our best-selling cakes are made to
+              create unforgettable memories.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <button type="button" class="btn btn-primary" data-action="order-now">
+                Order Now
+              </button>
+              <a href="contact.html" class="btn btn-outline">Inquiry</a>
+            </div>
+          </div>
+          <div id="bestGrid" class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <!-- ============ KIDS' CORNER ============ -->
+      <section
+        id="kids"
+        aria-labelledby="kids-title"
+        class="relative overflow-hidden bg-gradient-to-b from-butter/30 via-blush/30 to-sky/50 py-20"
+      >
+        <div id="kidsFloaties" class="floaties" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto max-w-7xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Birthday party magic</p>
+            <h2 id="kids-title" class="font-fun text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Little Ones' Corner</span> <span aria-hidden="true">🎈</span>
+            </h2>
+            <p class="mt-5 text-lg text-cocoa/80">
+              Cakes that make kids gasp, giggle and shout "Again!" Pick a theme and we will make it
+              yours.
+            </p>
           </div>
 
-          <div class="p-5 text-left">
-            <h2 class="text-xl font-bold text-gray-800">Tiramisu Cake</h2>
-            <p class="text-gray-500 text-sm mt-1">
-              Rich, creamy & classic Italian dessert
-            </p>
-
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-2xl font-bold text-purple-600">₹200</span>
-              <button
-                class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm hover:bg-purple-700"
-              >
-                Add
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div data-reveal="zoom">
+              <button type="button" data-action="kids-theme" data-theme="Unicorn" style="--tilt: -2deg"
+                class="kid-card block w-full rounded-[2rem] bg-petal p-6 text-center shadow-soft hover:shadow-lift">
+                <span class="kid-emoji text-7xl" aria-hidden="true">🦄</span>
+                <span class="mt-3 block font-fun text-2xl font-semibold">Unicorn Dream</span>
+                <span class="mt-1 block text-sm text-cocoa/75">Rainbow frosting, sparkles and a golden horn.</span>
+                <span class="btn btn-primary btn-sm mt-4">Make it mine</span>
+              </button>
+            </div>
+            <div data-reveal="zoom" style="--d: 0.08s">
+              <button type="button" data-action="kids-theme" data-theme="Superhero" style="--tilt: 2deg"
+                class="kid-card block w-full rounded-[2rem] bg-sky p-6 text-center shadow-soft hover:shadow-lift">
+                <span class="kid-emoji text-7xl" aria-hidden="true">🦸</span>
+                <span class="mt-3 block font-fun text-2xl font-semibold">Super Hero</span>
+                <span class="mt-1 block text-sm text-cocoa/75">Bold colours for the bravest birthday kid.</span>
+                <span class="btn btn-primary btn-sm mt-4">Make it mine</span>
+              </button>
+            </div>
+            <div data-reveal="zoom" style="--d: 0.16s">
+              <button type="button" data-action="kids-theme" data-theme="Dinosaur" style="--tilt: -1.5deg"
+                class="kid-card block w-full rounded-[2rem] bg-mint p-6 text-center shadow-soft hover:shadow-lift">
+                <span class="kid-emoji text-7xl" aria-hidden="true">🦖</span>
+                <span class="mt-3 block font-fun text-2xl font-semibold">Dino Roar</span>
+                <span class="mt-1 block text-sm text-cocoa/75">Chocolate footprints and a chomping T-Rex.</span>
+                <span class="btn btn-primary btn-sm mt-4">Make it mine</span>
+              </button>
+            </div>
+            <div data-reveal="zoom" style="--d: 0.24s">
+              <button type="button" data-action="kids-theme" data-theme="Princess" style="--tilt: 2.5deg"
+                class="kid-card block w-full rounded-[2rem] bg-peach p-6 text-center shadow-soft hover:shadow-lift">
+                <span class="kid-emoji text-7xl" aria-hidden="true">👑</span>
+                <span class="mt-3 block font-fun text-2xl font-semibold">Little Princess</span>
+                <span class="mt-1 block text-sm text-cocoa/75">Pink pearls, ruffles and a tiny crown.</span>
+                <span class="btn btn-primary btn-sm mt-4">Make it mine</span>
               </button>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Card 2 -->
-        <div
-          class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group"
-        >
-          <div class="overflow-hidden">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1722686461601-b2a018a4213b?q=80&w=800"
-              class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-            />
-          </div>
+      <!-- ============ PHOTO MARQUEE (CSS-only animation) ============ -->
+      <section aria-label="What we bake" class="ticker-band py-8">
+        <div class="marquee">
+          <div id="marqueeTrack" class="marquee-track"></div>
+        </div>
+        <div class="marquee mt-4">
+          <div id="marqueeTrack2" class="marquee-track reverse"></div>
+        </div>
+      </section>
 
-          <div class="p-5 text-left">
-            <h2 class="text-xl font-bold text-gray-800">Raspberry Chocolate</h2>
-            <p class="text-gray-500 text-sm mt-1">
-              Perfect blend of sweet & tangy
+      <!-- ============ PRODUCTS ============ -->
+      <section id="products" aria-labelledby="products-title" class="py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">The full menu</p>
+            <h2 id="products-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Our Products</span>
+            </h2>
+            <p class="mt-4 text-lg text-cocoa/80">
+              Baked fresh every morning. Pick your favourites and order in a couple of taps.
             </p>
-
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-2xl font-bold text-purple-600">₹200</span>
-              <button
-                class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm hover:bg-purple-700"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div
-          class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition group"
-        >
-          <div class="overflow-hidden">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1671915835768-34183674970a?q=80&w=800"
-              class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-            />
           </div>
 
-          <div class="p-5 text-left">
-            <h2 class="text-xl font-bold text-gray-800">Wedding Cake</h2>
-            <p class="text-gray-500 text-sm mt-1">
-              Elegant & beautifully crafted
-            </p>
-
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-2xl font-bold text-purple-600">₹200</span>
-              <button
-                class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm hover:bg-purple-700"
-              >
-                Add
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- best seller -->
-    <!-- img slider -->
-    <div class="overflow-hidden py-10 bg-gray-100">
-      <div class="relative w-full overflow-hidden group">
-        <!-- Track -->
-        <div class="flex gap-6 animate-scroll">
-          <!-- Images -->
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
-            class="img-style"
-          />
-
-          <!-- DUPLICATE (IMPORTANT for infinite effect) -->
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
-            class="img-style"
-          />
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
-            class="img-style"
-          />
-        </div>
-      </div>
-    </div>
-    <!-- img slider -->
-    <!-- products -->
-    <section
-      id="section3"
-      class="py-16 px-6 bg-gradient-to-br from-violet-500 to-purple-700"
-    >
-      <!-- Heading -->
-      <h1 class="text-4xl font-bold text-white text-center mb-12">
-        Our Products
-      </h1>
-
-      <!-- Grid -->
-      <div
-        id="productGrid"
-        class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto"
-      ></div>
-    </section>
-    <!-- products -->
-    <!-- section-4 -->
-    <section
-      id="section4"
-      class="bg-gradient-to-br from-purple-100 to-blue-100 py-16"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
-      >
-        <!-- LEFT IMAGE -->
-        <div class="relative">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1717529138199-4560ef38fb32?q=80&w=1200"
-            class="rounded-3xl shadow-xl w-full h-[400px] object-cover"
-          />
-
-          <!-- floating badge -->
           <div
-            class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-full shadow-md text-sm font-semibold"
-          >
-            🎂 1000+ Happy Customers
+            id="filterChips"
+            role="group"
+            aria-label="Filter products by category"
+            class="mt-10 flex flex-wrap justify-center gap-2"
+          ></div>
+          <div class="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <label for="sortSelect" class="font-semibold">Sort by</label>
+            <select id="sortSelect" class="field !mt-0 !w-auto !py-2">
+              <option value="popular">Popular</option>
+              <option value="rating">Top rated</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </select>
+            <button type="button" id="egglessToggle" class="chip" data-action="eggless" aria-pressed="false">
+              🌱 Eggless only
+            </button>
           </div>
+          <p id="resultCount" role="status" class="mt-4 text-center text-sm text-cocoa/70"></p>
+
+          <div
+            id="productGrid"
+            class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          ></div>
         </div>
+      </section>
 
-        <!-- RIGHT CONTENT -->
-        <div>
-          <h1 class="text-4xl font-bold text-gray-800 mb-4">
-            About Our Bakery
-          </h1>
+      <!-- ============ CUSTOM CAKE BUILDER ============ -->
+      <section
+        id="custom"
+        aria-labelledby="custom-title"
+        class="bg-gradient-to-b from-cream to-blush/40 py-20"
+      >
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Design your own</p>
+            <h2 id="custom-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Build a Custom Cake</span>
+            </h2>
+            <p class="mt-5 text-lg text-cocoa/80">
+              Pick the shape, tiers, flavour, frosting and toppings and watch your cake come to life.
+              Then send it to us on WhatsApp.
+            </p>
+          </div>
 
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            We create handcrafted cakes that turn every moment into a
-            celebration. From birthdays to weddings, our desserts are designed
-            with love, taste, and creativity.
-          </p>
+          <div class="mt-12 grid items-start gap-10 lg:grid-cols-2">
+            <!-- Live preview: the SVG is rebuilt by builder.js on every change -->
+            <div class="lg:sticky lg:top-24" data-reveal="left">
+              <div id="cakePreviewCard" class="rounded-[2rem] bg-white p-5 text-center shadow-lift lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
+                <div id="cakeSvgWrap" class="cake-svg mx-auto w-full max-w-[26rem]"></div>
+                <p id="cakeSummary" class="mt-2 text-sm font-medium text-cocoa/80" aria-live="polite"></p>
+                <p id="cakeServes" class="text-xs text-cocoa/70"></p>
+                <p class="mt-3 text-xs uppercase tracking-widest text-cocoa/70">Estimated price</p>
+                <p id="cakePrice" class="font-display text-4xl font-semibold text-berry-dark"></p>
+                <p class="text-xs text-cocoa/70">Estimated price, final price confirmed on WhatsApp</p>
 
-          <!-- Mission + Vision -->
-          <div class="grid grid-cols-2 gap-4 mb-6">
-            <div class="bg-white p-4 rounded-xl shadow">
-              <h2 class="font-semibold text-purple-700">🎯 Mission</h2>
-              <p class="text-sm text-gray-600 mt-2">
-                Deliver high-quality, delicious desserts with a touch of
-                creativity.
-              </p>
+                <details class="mt-3 rounded-2xl bg-cream px-4 py-3 text-left text-sm">
+                  <summary class="cursor-pointer font-semibold">Price breakdown</summary>
+                  <ul id="cakeBreakdown" class="mt-3 space-y-1.5"></ul>
+                </details>
+
+                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                  <button type="button" id="cakeRandom" class="btn btn-outline btn-sm">🎲 Surprise me</button>
+                  <button type="button" id="cakeReset" class="btn btn-outline btn-sm">↺ Reset</button>
+                  <button type="button" id="cakeDownload" class="btn btn-outline btn-sm">⬇ Download design</button>
+                </div>
+              </div>
             </div>
 
-            <div class="bg-white p-4 rounded-xl shadow">
-              <h2 class="font-semibold text-purple-700">🌟 Vision</h2>
-              <p class="text-sm text-gray-600 mt-2">
-                Become the most loved bakery brand in every celebration.
+            <form id="builderForm" novalidate class="rounded-[2rem] bg-white p-6 shadow-soft sm:p-8" data-reveal="right">
+              <div id="builderBody" class="space-y-7"></div>
+
+              <button type="submit" class="btn btn-primary mt-8 w-full">Send on WhatsApp</button>
+              <p class="mt-3 text-center text-xs text-cocoa/70">
+                Estimated price, final price confirmed on WhatsApp.
               </p>
+            </form>
+          </div>
+
+          <!-- Mobile only: mini cake bar that follows you while you scroll the options -->
+          <div id="cakeBar" class="cake-bar" role="region" aria-label="Your cake so far">
+            <span id="cakeBarSvg" class="cake-bar-svg" aria-hidden="true"></span>
+            <span id="cakeBarPrice" class="font-display text-lg font-semibold text-berry-dark"></span>
+            <button type="button" id="cakeBarUp" class="btn btn-primary btn-sm">Preview ↑</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HOW IT WORKS ============ -->
+      <section id="steps" aria-labelledby="steps-title" class="py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Easy as pie</p>
+            <h2 id="steps-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">How it works</span>
+            </h2>
+          </div>
+          <ol class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <li class="step relative text-center" data-reveal>
+              <span class="step-num">1</span>
+              <span class="step-emoji mt-4 block text-5xl" aria-hidden="true">🍰</span>
+              <h3 class="mt-3 font-fun text-xl font-semibold">Choose</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Pick a treat from the menu or design your own cake.</p>
+            </li>
+            <li class="step relative text-center" data-reveal style="--d: 0.1s">
+              <span class="step-num">2</span>
+              <span class="step-emoji mt-4 block text-5xl" aria-hidden="true">🎨</span>
+              <h3 class="mt-3 font-fun text-xl font-semibold">Customise</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Add a message, a theme and your date.</p>
+            </li>
+            <li class="step relative text-center" data-reveal style="--d: 0.2s">
+              <span class="step-num">3</span>
+              <span class="step-emoji mt-4 block text-5xl" aria-hidden="true">👩‍🍳</span>
+              <h3 class="mt-3 font-fun text-xl font-semibold">We bake</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Fresh ingredients, baked with lots of love.</p>
+            </li>
+            <li class="step relative text-center" data-reveal style="--d: 0.3s">
+              <span class="step-num">4</span>
+              <span class="step-emoji mt-4 block text-5xl" aria-hidden="true">🛵</span>
+              <h3 class="mt-3 font-fun text-xl font-semibold">Delivered</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Right to your door, ready for the party.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ BEFORE YOU ORDER: size guide, delivery check, trust badges ============ -->
+      <section id="plan" aria-labelledby="plan-title" class="bg-gradient-to-b from-cream to-sky/40 py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Plan your order</p>
+            <h2 id="plan-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Before You Order</span>
+            </h2>
+          </div>
+
+          <div class="mt-12 grid gap-8 md:grid-cols-2">
+            <!-- Size guide (PLACEHOLDER servings: adjust to your cakes) -->
+            <div class="rounded-[2rem] bg-white p-8 shadow-soft" data-reveal="left">
+              <h3 class="font-fun text-2xl font-semibold"><span aria-hidden="true">📏</span> How big a cake?</h3>
+              <p class="mt-1 text-sm text-cocoa/75">A simple guide to how many people each size serves.</p>
+              <ul class="mt-5 space-y-3">
+                <li class="size-row"><span class="size-cake">½ kg</span><span class="size-people">4–5 people</span><span aria-hidden="true">🧁</span></li>
+                <li class="size-row"><span class="size-cake">1 kg</span><span class="size-people">8–10 people</span><span aria-hidden="true">🎂</span></li>
+                <li class="size-row"><span class="size-cake">2 kg</span><span class="size-people">16–20 people</span><span aria-hidden="true">🎉</span></li>
+                <li class="size-row"><span class="size-cake">3 kg+</span><span class="size-people">25–30 people</span><span aria-hidden="true">🥳</span></li>
+              </ul>
+              <p class="mt-4 text-xs text-cocoa/70">Not sure? Message us the guest count and we will suggest a size.</p>
+            </div>
+
+            <!-- Pincode checker -->
+            <div class="rounded-[2rem] bg-white p-8 shadow-soft" data-reveal="right">
+              <h3 class="font-fun text-2xl font-semibold"><span aria-hidden="true">🛵</span> Do we deliver to you?</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Type your pincode to check.</p>
+              <form id="pinForm" novalidate class="mt-5 flex flex-wrap gap-3">
+                <label for="pinInput" class="sr-only">Pincode</label>
+                <input id="pinInput" inputmode="numeric" maxlength="6" autocomplete="postal-code" placeholder="e.g. 400001" aria-describedby="pinResult" class="field !mt-0 min-w-0 flex-1" />
+                <button type="submit" class="btn btn-primary">Check</button>
+              </form>
+              <p id="pinResult" role="status" class="mt-3 min-h-[1.5rem] text-sm"></p>
+              <p class="mt-2 text-xs text-cocoa/70">Standard cakes need 24 hours' notice.</p>
             </div>
           </div>
 
-          <!-- TEAM -->
-          <div class="flex items-center gap-4 mb-6">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1677252438411-9a930d7a5168?q=80&w=400"
-              class="w-12 h-12 rounded-full border-2 border-white shadow-md"
-            />
+          <ul id="trustBadges" class="mt-10 flex flex-wrap justify-center gap-4 text-center text-sm font-semibold" data-reveal>
+            <li class="trust-badge"><span aria-hidden="true">🥛</span>Real butter &amp; cream</li>
+            <li class="trust-badge"><span aria-hidden="true">🌱</span>Eggless options</li>
+            <li class="trust-badge"><span aria-hidden="true">🧼</span>Hygiene-first kitchen</li>
+            <li class="trust-badge" id="fssaiBadge" hidden><span aria-hidden="true">✅</span><span id="fssaiText"></span></li>
+          </ul>
+        </div>
+      </section>
 
-            <img
-              src="https://plus.unsplash.com/premium_photo-1677252438411-9a930d7a5168?q=80&w=400"
-              class="w-12 h-12 rounded-full border-2 border-white shadow-md -ml-4"
-            />
+      <!-- ============ ABOUT ============ -->
+      <section id="about" aria-labelledby="about-title" class="bg-blush/30 py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid items-center gap-12 lg:grid-cols-2">
+            <!-- Photo collage -->
+            <div class="about-collage" data-reveal="left">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1717529138199-4560ef38fb32?q=80&w=1200"
+                alt="Our bakers decorating a freshly baked cake in the kitchen"
+                width="1200"
+                height="800"
+                loading="lazy"
+                class="about-main"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=600"
+                alt="A box of frosted cupcakes ready to go out"
+                width="600"
+                height="600"
+                loading="lazy"
+                class="about-small"
+              />
+              <div class="about-sticker" aria-label="1000 plus happy customers">
+                <span class="text-3xl" aria-hidden="true">🎂</span>
+                <strong class="font-display text-2xl leading-none">1000+</strong>
+                <span class="text-xs font-semibold leading-tight">Happy<br />Customers</span>
+              </div>
+            </div>
 
-            <img
-              src="https://plus.unsplash.com/premium_photo-1677252438411-9a930d7a5168?q=80&w=400"
-              class="w-12 h-12 rounded-full border-2 border-white shadow-md -ml-4"
-            />
+            <div data-reveal="right" style="--d: 0.1s">
+              <p class="eyebrow">Our story</p>
+              <h2 id="about-title" class="font-display text-4xl font-semibold sm:text-5xl">
+                <span class="squiggle">About Our Bakery</span>
+              </h2>
+              <p class="mt-4 text-lg leading-relaxed text-cocoa/80">
+                We create handcrafted cakes that turn every moment into a celebration. From
+                birthdays to weddings, our desserts are designed with love, taste and creativity.
+              </p>
 
-            <span class="text-gray-700 text-sm ml-2"> +10 team members </span>
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="about-card bg-blush/60">
+                  <span class="about-icon" aria-hidden="true">🎯</span>
+                  <h3 class="mt-3 font-display text-lg font-semibold">Our Mission</h3>
+                  <p class="mt-1 text-sm text-cocoa/80">
+                    Deliver high-quality, delicious desserts with a touch of creativity.
+                  </p>
+                </div>
+                <div class="about-card bg-butter/50">
+                  <span class="about-icon" aria-hidden="true">🌟</span>
+                  <h3 class="mt-3 font-display text-lg font-semibold">Our Vision</h3>
+                  <p class="mt-1 text-sm text-cocoa/80">
+                    Become the most loved bakery brand in every celebration.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
+                <div class="flex items-center" aria-hidden="true">
+                  <span class="about-face bg-blush">👩‍🍳</span>
+                  <span class="about-face -ml-3 bg-butter">🧑‍🍳</span>
+                  <span class="about-face -ml-3 bg-sky">👨‍🍳</span>
+                </div>
+                <span class="text-sm text-cocoa/80">Baked by a team of 10+ passionate bakers</span>
+              </div>
+
+              <a href="contact.html" class="btn btn-primary mt-8">Contact Us →</a>
+            </div>
           </div>
 
-          <!-- CTA -->
-          <a href="../contact.html"
-            ><button
-              class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition transform hover:scale-105"
-            >
-              Contact Us →
-            </button></a
-          >
+          <!-- Why choose us -->
+          <ul class="mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <li class="why-card" data-reveal="zoom" style="--tone: #F8C8D0">
+              <span class="why-icon" aria-hidden="true">🌾</span>
+              <h3 class="mt-4 font-display text-lg font-semibold">Fresh daily</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Baked every morning, never frozen.</p>
+            </li>
+            <li class="why-card" data-reveal="zoom" style="--tone: #D3F2E0; --d: 0.08s">
+              <span class="why-icon" aria-hidden="true">🌱</span>
+              <h3 class="mt-4 font-display text-lg font-semibold">Eggless options</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Most of our cakes come in an eggless version.</p>
+            </li>
+            <li class="why-card" data-reveal="zoom" style="--tone: #F6D186; --d: 0.16s">
+              <span class="why-icon" aria-hidden="true">🎨</span>
+              <h3 class="mt-4 font-display text-lg font-semibold">Custom designs</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Tell us your idea and we will bake it.</p>
+            </li>
+            <li class="why-card" data-reveal="zoom" style="--tone: #D4EBFF; --d: 0.24s">
+              <span class="why-icon" aria-hidden="true">🛵</span>
+              <h3 class="mt-4 font-display text-lg font-semibold">Same-day delivery</h3>
+              <p class="mt-1 text-sm text-cocoa/75">Order before noon for delivery today.</p>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
-    <!-- footer -->
-    <footer class="bg-gray-900 text-white py-6 text-center">
-      <p>© 2026 CakeShop. All rights reserved.</p>
-    </footer>
-    <script src="./main.js"></script>
+      </section>
+
+      <!-- ============ TESTIMONIALS (PLACEHOLDER names and quotes) ============ -->
+      <section id="reviews" aria-labelledby="reviews-title" class="bg-butter/30 py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="eyebrow">Kind words</p>
+            <h2 id="reviews-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Loved by our customers</span>
+            </h2>
+          </div>
+          <div class="mt-12 grid gap-8 md:grid-cols-3">
+            <figure class="rounded-3xl bg-white p-7 shadow-soft" data-reveal>
+              <p class="text-amber-600" aria-label="5 out of 5 stars">★★★★★</p>
+              <blockquote class="mt-3 text-cocoa/85">
+                “Placeholder review: the birthday cake looked beautiful and tasted even better.
+                Everyone asked where it was from!”
+              </blockquote>
+              <figcaption class="mt-5 text-sm font-semibold">
+                Sample Customer A
+                <span class="block font-normal text-cocoa/70">Birthday order</span>
+              </figcaption>
+            </figure>
+            <figure class="rounded-3xl bg-white p-7 shadow-soft" data-reveal style="--d: 0.1s">
+              <p class="text-amber-600" aria-label="5 out of 5 stars">★★★★★</p>
+              <blockquote class="mt-3 text-cocoa/85">
+                “Placeholder review: delivered on time and still fresh. The macarons were gone in
+                ten minutes.”
+              </blockquote>
+              <figcaption class="mt-5 text-sm font-semibold">
+                Sample Customer B
+                <span class="block font-normal text-cocoa/70">Office party</span>
+              </figcaption>
+            </figure>
+            <figure class="rounded-3xl bg-white p-7 shadow-soft" data-reveal style="--d: 0.2s">
+              <p class="text-amber-600" aria-label="5 out of 5 stars">★★★★★</p>
+              <blockquote class="mt-3 text-cocoa/85">
+                “Placeholder review: they made our wedding cake exactly as we imagined. Truly
+                handcrafted.”
+              </blockquote>
+              <figcaption class="mt-5 text-sm font-semibold">
+                Sample Customer C
+                <span class="block font-normal text-cocoa/70">Wedding cake</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FAQ (native <details>, no JS needed) ============ -->
+      <section id="faq" aria-labelledby="faq-title" class="py-20">
+        <div class="mx-auto max-w-3xl px-6">
+          <div class="text-center" data-reveal>
+            <p class="eyebrow">Good to know</p>
+            <h2 id="faq-title" class="font-display text-4xl font-semibold sm:text-5xl">
+              <span class="squiggle">Frequently asked questions</span>
+            </h2>
+          </div>
+          <div class="mt-10 space-y-3" data-reveal>
+            <details class="rounded-2xl bg-white p-5 shadow-soft">
+              <summary class="flex items-center justify-between gap-4 font-semibold">
+                Which areas do you deliver to?
+                <svg class="chev h-5 w-5 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </summary>
+              <p class="mt-3 text-cocoa/80">
+                We currently deliver across Mumbai and nearby suburbs (placeholder: update with
+                your real delivery areas). You can also order through Swiggy or Zomato.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-white p-5 shadow-soft">
+              <summary class="flex items-center justify-between gap-4 font-semibold">
+                Do you have eggless options?
+                <svg class="chev h-5 w-5 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </summary>
+              <p class="mt-3 text-cocoa/80">
+                Yes. Most of our cakes and cupcakes can be made eggless at no extra cost. Just
+                mention it in your order message.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-white p-5 shadow-soft">
+              <summary class="flex items-center justify-between gap-4 font-semibold">
+                How far in advance should I order?
+                <svg class="chev h-5 w-5 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </summary>
+              <p class="mt-3 text-cocoa/80">
+                Standard cakes and bakes need 24 hours' notice. Custom designs and wedding cakes
+                need 3 to 5 days (placeholder: adjust to your real lead times).
+              </p>
+            </details>
+            <details class="rounded-2xl bg-white p-5 shadow-soft">
+              <summary class="flex items-center justify-between gap-4 font-semibold">
+                How do I pay?
+                <svg class="chev h-5 w-5 flex-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </summary>
+              <p class="mt-3 text-cocoa/80">
+                Send your order on WhatsApp and we will confirm the details and share payment
+                options (placeholder: update with your real payment methods).
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer, cart drawer and toast are injected by main.js -->
+    <div id="site-footer"></div>
+
+    <script src="main.js?v=17"></script>
+    <script src="builder.js?v=17"></script>
   </body>
 </html>
