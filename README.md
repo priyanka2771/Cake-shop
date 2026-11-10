@@ -3,6 +3,7 @@
 A warm, playful website for a cake and bakery shop. Customers can browse the menu, shop by occasion, design their own cake with a live preview, fill a cart and send the order to the bakery on WhatsApp. It is a static site, so it needs no build step and no backend.
 
 **Repository:** https://github.com/priyanka2771/Cake-shop
+https://priyanka2771.github.io/Cake-shop/
 
 ## Features
 
